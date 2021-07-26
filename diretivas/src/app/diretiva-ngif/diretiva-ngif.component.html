@@ -1,0 +1,47 @@
+<h5>*ngIF</h5>
+
+<!-- <div *ngIf="cursos.length > 0">
+    Lista de cursos aqui
+</div>
+
+<div *ngIf="cursos.length == 0">
+    Não existem cursos para serem listados
+
+</div><br><br>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui
+</div>
+
+<div *ngIf="!mostrarCursos">
+    Não existem cursos para serem listados 2 com BOOLEAN
+
+</div>
+
+<br> -->
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder Cursos</button>
+
+<div [hidden]="!mostrarCursos">
+    Lista de cursos aqui
+</div>
+
+<div [hidden]="mostrarCursos">
+    Não existem cursos para serem listados 3 com hidden
+
+</div>
+
+<!--Mostrando a diretiva sem o *-->
+ 
+<div *ngIf="mostrarCursos">
+    
+</div>
+
+<ng-template [ngIf]="mostrarCursos">
+    <div> Lista de cursos aqui911111</div>
+</ng-template>
+
+
+<div template="ngIf mostrarCursos">
+    Lista de cursos aqui954125
+</div> 

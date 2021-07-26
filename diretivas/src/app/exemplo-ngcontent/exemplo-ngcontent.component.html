@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading" [ngStyle]="{
+        'backgroundColor':('#000'),
+        'color': ('#fff')
+    }">
+        <ng-content select=".titulo"></ng-content>
+    </div>
+    <div class="panel-body" [ngStyle]="{
+        'backgroundColor':('green'),
+        'color': ('#fff')
+    }">
+      <ng-content select=".corpo"></ng-content>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,19 @@
+<h5>NG FOR</h5>
+
+<ul>
+    <li *ngFor="let curso of cursos; let i = index; let primeiro = first; last as ultimo">
+     {{primeiro}} - {{i + 1}}  {{curso}} - {{ultimo}}
+    </li>
+</ul>
+
+
+<h5>Removendo o * usando o template</h5>
+
+<ul>
+    <ng-template ngFor [ngForOf]="cursos" let-curso>
+        <li template="ngFor let curso of cursos">
+            {{curso}}
+        </li>
+    </ng-template>
+    
+</ul>
