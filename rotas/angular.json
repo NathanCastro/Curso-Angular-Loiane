@@ -94,7 +94,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./npm/@popperjs/core@2.9.2/dist/umd/popper.min.js",
+             "./npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {

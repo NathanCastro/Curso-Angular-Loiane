@@ -1,25 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="mostrarMenu">
   <div class="container-fluid">
     <a routerLink="" class="navbar-brand" href="home">     
       <img src="../favicon.ico">
     </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div id="navbarNav" class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a routerLink="/login" routerLinkActive="ativado" class="nav-link active" aria-current="page" >Login</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/cursos" routerLinkActive="ativado" class="nav-link active" >Cursos</a>
+          <a routerLink="" routerLinkActive="ativado" class="nav-link active" aria-current="page" >home</a>
         </li>
+      
         <li class="nav-item">
+          <a routerLink="/cursos" [queryParams]="{ pagina:1}" routerLinkActive="ativado" class="nav-link active" >Cursos</a>
+        </li>
+        <!-- <li class="nav-item">
           <a [routerLink]="['/curso', idCurso.value]" routerLinkActive="ativado" class="nav-link active" >Curso com ID</a>
+        </li> -->
+        <li class="nav-item">
+          <a routerLink="/alunos" routerLinkActive="ativado" class="nav-link active" >Alunos</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="container">
-  <p>Entre com o id do curso</p>
-  <input #idCurso>
+  <!-- <p>Entre com o id do curso</p>
+  <input #idCurso> -->
   <router-outlet></router-outlet>
 </div>
