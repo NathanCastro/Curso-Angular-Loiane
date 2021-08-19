@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
 
+  
   usuario: any = {
     nome: '',
     email: ''
@@ -20,6 +21,14 @@ export class TemplateFormComponent implements OnInit {
   onSubmit(form){
     console.log(form)
 
-    console.log(this.usuario)
+  }
+  validaTouchedValid(campo){
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return {
+      'was-validated' : this.validaTouchedValid(campo),
+      'has-feedback' : this.validaTouchedValid(campo)
+    }
   }
 }
