@@ -16,17 +16,21 @@ export class TemplateFormComponent implements OnInit {
   }
 
   constructor(
-    private http: HttpClient) { }
+    private http: HttpClient
+  ){}
 
   ngOnInit(): void {
   }
 
-  onSubmit(form){
-    console.log(form)
+  onSubmit(formulario){
+    console.log(formulario)
 
-    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+    this.http.post('https://httpbin.org/post', JSON.stringify(formulario.value))
     .pipe(map( res => res))
-      .subscribe(dados => console.log(dados));
+      .subscribe(dados => {
+        console.log(dados)
+        formulario.form.reset();
+      });
   }
   validaTouchedValid(campo){
     return !campo.valid && campo.touched;
